@@ -4,6 +4,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 import EditProduct from "@/components/EditProduct";
 import { useEffect, useState } from "react";
 import AddProduct from "@/components/AddProduct";
+import SaleProduct from "@/components/SaleProduct";
 
 async function getProducts() {
   const res = await fetch(
@@ -150,7 +151,12 @@ export default function Products({ products }) {
                   <span className="grid me-2">
                     <EditProduct
                       product={product}
-                      getProducts={getProducts}
+                      setProductUpdated={() => setProductUpdated(true)}
+                    />
+                  </span>
+                  <span className="grid me-2">
+                    <SaleProduct
+                      product={product}
                       setProductUpdated={() => setProductUpdated(true)}
                     />
                   </span>

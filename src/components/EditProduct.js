@@ -3,14 +3,20 @@ import { Button, Form, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
-const EditProduct = ({ product, getProducts, setProductUpdated }) => {
+const EditProduct = ({ product, setProductUpdated }) => {
   const [show, setShow] = useState(false);
   const [name, setName] = useState(product.name);
   const [description, setDescription] = useState(product.description);
   const [available, setAvailable] = useState(product.available);
   const [price, setPrice] = useState(product.price);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+    setName(product.name);
+    setDescription(product.description);
+    setAvailable(product.setAvailable);
+    setPrice(product.price);
+  };
   const handleShow = () => setShow(true);
 
   const handleSubmit = async () => {
@@ -26,7 +32,6 @@ const EditProduct = ({ product, getProducts, setProductUpdated }) => {
       );
       console.log(response.data);
       setProductUpdated(true);
-      getProducts();
       handleClose();
     } catch (error) {
       console.error(error);
