@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import EditProduct from "@/components/EditProduct";
@@ -132,9 +133,9 @@ export default function Products({ products }) {
                 <td>{product.id}</td>
                 <td>{product.name}</td>
                 <td>{product.description}</td>
-                <td>{product.price}</td>
+                <td>R$ {product.price}</td>
                 <td>{product.available}</td>
-                <td>{product.total}</td>
+                <td>R$ {product.total}</td>
                 <td>
                   <button
                     className="btn btn-danger me-2"

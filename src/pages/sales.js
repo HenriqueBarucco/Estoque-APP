@@ -83,7 +83,7 @@ export default function Sales({ sales }) {
                 <td>{sale.product.name}</td>
                 <td>{sale.quantity}</td>
                 <td>{sale.date}</td>
-                <td>{sale.totalValue}</td>
+                <td>R$ {sale.totalValue}</td>
               </tr>
             ))}
           </tbody>
