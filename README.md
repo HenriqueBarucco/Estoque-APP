@@ -1,38 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Estoque APP
 
-## Getting Started
+Esta é uma aplicação de estoque desenvolvida com o framework NextJS. Nesta aplicação, há duas rotas: "/" e "/sales". A primeira rota mostra os itens em estoque, permitindo a remoção, edição e venda dos produtos. Já a segunda rota é utilizada apenas para verificar as vendas realizadas.
 
-First, run the development server:
+## Requisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- NodeJS (versão 12 ou superior)
+- npm (ou yarn)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Instalação
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Clone o repositório para o seu computador;
+2. Na pasta raiz do projeto, execute o comando `npm install` ou `yarn install` para instalar as dependências;
+4. Execute o comando `npm run dev` ou `yarn dev` para iniciar a aplicação.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Funcionalidades
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Rota "/"
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Mostra todos os itens em estoque;
+- Permite remover um item do estoque;
+- Permite editar as informações de um item do estoque;
+- Permite adicionar um novo item ao estoque;
+- Permite vender um item do estoque.
 
-## Learn More
+### Rota "/sales"
 
-To learn more about Next.js, take a look at the following resources:
+- Mostra todas as vendas realizadas.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tecnologias utilizadas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- NextJS
+- React
+- Axios
+- Bootstrap
 
-## Deploy on Vercel
+## API utilizada
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Para a implementação desta aplicação, foi utilizada a API de estoque (Estoque-API). Para mais informações sobre esta API, consulte o arquivo README do repositório da API.
