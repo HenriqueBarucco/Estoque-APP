@@ -119,7 +119,7 @@ export default function Products({ products }) {
           <thead>
             <tr>
               <th onClick={() => handleSort("id")}>ID</th>
-              <th onClick={() => handleSort("name")}>Nome</th>
+              <th className="col-3" onClick={() => handleSort("name")}>Nome</th>
               <th onClick={() => handleSort("description")}>Descrição</th>
               <th onClick={() => handleSort("price")}>Preço</th>
               <th onClick={() => handleSort("available")}>Quantidade</th>
