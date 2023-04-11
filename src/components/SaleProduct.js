@@ -32,7 +32,7 @@ const SaleProduct = ({ product, setProductUpdated }) => {
 
   return (
     <>
-      <Button variant="success" onClick={handleShow}>
+      <Button variant="success" disabled={(product.available <= 0)} onClick={handleShow}>
         Vender
       </Button>
 
