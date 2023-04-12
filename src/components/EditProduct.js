@@ -6,14 +6,16 @@ import axios from "axios";
 const EditProduct = ({ product, setProductUpdated }) => {
   const [show, setShow] = useState(false);
   const [name, setName] = useState(product.name);
-  const [description, setDescription] = useState(product.description);
+  const [model, setModel] = useState(product.model);
+  const [measure, setMeasure] = useState(product.measure);
   const [available, setAvailable] = useState(product.available);
   const [price, setPrice] = useState(product.price);
 
   const handleClose = () => {
     setShow(false);
     setName(product.name);
-    setDescription(product.description);
+    setModel(product.model);
+    setMeasure(product.measure);
     setAvailable(product.setAvailable);
     setPrice(product.price);
   };
@@ -25,7 +27,8 @@ const EditProduct = ({ product, setProductUpdated }) => {
         `https://estoque-api.henriquebarucco.com.br/products/${product.id}`,
         {
           name,
-          description,
+          model,
+          measure,
           available,
           price,
         }
@@ -60,14 +63,24 @@ const EditProduct = ({ product, setProductUpdated }) => {
                 onChange={(e) => setName(e.target.value)}
               />
             </Form.Group>
-            <Form.Group controlId="formDescription">
-              <Form.Label>Descrição</Form.Label>
+            <Form.Group controlId="formModel">
+              <Form.Label>Modelo</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Descrição do produto"
-                defaultValue={product.description}
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Modelo do produto"
+                defaultValue={product.model}
+                value={model}
+                onChange={(e) => setModel(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="formMeasure">
+              <Form.Label>Medida</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Medida do produto"
+                defaultValue={product.measure}
+                value={measure}
+                onChange={(e) => setMeasure(e.target.value)}
               />
             </Form.Group>
             <Form.Group controlId="formAvailable">
