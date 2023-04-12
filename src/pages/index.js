@@ -118,13 +118,10 @@ export default function Products({ products }) {
         <table className="table table-striped table-hover align-middle">
           <thead>
             <tr>
-              <th onClick={() => handleSort("id")}>ID</th>
               <th className="col-3" onClick={() => handleSort("name")}>
                 Produto
               </th>
-              <th onClick={() => handleSort("model")}>
-                Marca
-              </th>
+              <th onClick={() => handleSort("model")}>Marca</th>
               <th onClick={() => handleSort("measure")}>Medida</th>
               <th onClick={() => handleSort("price")}>Preço</th>
               <th onClick={() => handleSort("available")}>Quantidade</th>
@@ -135,7 +132,6 @@ export default function Products({ products }) {
           <tbody>
             {sortedProducts.map((product) => (
               <tr key={product.id}>
-                <td>{product.id}</td>
                 <td>{product.name}</td>
                 <td>{product.model}</td>
                 <td>{product.measure}</td>
