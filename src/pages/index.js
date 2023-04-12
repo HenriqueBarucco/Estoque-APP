@@ -127,6 +127,8 @@ export default function Products({ products }) {
               <th onClick={() => handleSort("available")}>Quantidade</th>
               <th onClick={() => handleSort("total")}>Valor total</th>
               <th>Opções</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -161,12 +163,17 @@ export default function Products({ products }) {
                   >
                     Excluir
                   </button>
+                </td>
+                <td>
                   <span className="grid me-2">
                     <EditProduct
                       product={product}
                       setProductUpdated={() => setProductUpdated(true)}
                     />
                   </span>
+                </td>
+                <td>
+                  {" "}
                   <span className="grid me-2">
                     <SaleProduct
                       product={product}
