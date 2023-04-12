@@ -82,7 +82,7 @@ export default function Sales({ sales }) {
                 <td>{sale.id}</td>
                 <td>{sale.product.name}</td>
                 <td>{sale.quantity}</td>
-                <td>{sale.date}</td>
+                <td>{new Date(sale.date).toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo', dateStyle: 'short', timeStyle: 'short'})}</td>
                 <td>R$ {sale.totalValue}</td>
               </tr>
             ))}
