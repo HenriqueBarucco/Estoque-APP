@@ -119,8 +119,9 @@ export default function Products({ products }) {
           <thead>
             <tr>
               <th onClick={() => handleSort("id")}>ID</th>
-              <th className="col-3" onClick={() => handleSort("name")}>Nome</th>
-              <th onClick={() => handleSort("description")}>Descrição</th>
+              <th className="col-3" onClick={() => handleSort("name")}>Produto</th>
+              <th onClick={() => handleSort("model")}>Marca</th>
+              <th onClick={() => handleSort("measure")}>Medida</th>
               <th onClick={() => handleSort("price")}>Preço</th>
               <th onClick={() => handleSort("available")}>Quantidade</th>
               <th onClick={() => handleSort("total")}>Valor total</th>
@@ -132,10 +133,11 @@ export default function Products({ products }) {
               <tr key={product.id}>
                 <td>{product.id}</td>
                 <td>{product.name}</td>
-                <td>{product.description}</td>
-                <td>R$ {product.price}</td>
+                <td>{product.model}</td>
+                <td>{product.measure}</td>
+                <td>{product.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
                 <td>{product.available}</td>
-                <td>R$ {product.total}</td>
+                <td>{product.total.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</td>
                 <td>
                   <button
                     className="btn btn-danger me-2"
