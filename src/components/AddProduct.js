@@ -6,14 +6,16 @@ import axios from "axios";
 const AddProduct = ({ setProductUpdated }) => {
   const [show, setShow] = useState(false);
   const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
+  const [model, setModel] = useState("");
+  const [measure, setMeasure] = useState("");
   const [available, setAvailable] = useState(0);
   const [price, setPrice] = useState(0);
 
   const handleClose = () => {
     setShow(false);
     setName("");
-    setDescription("");
+    setModel("");
+    setMeasure("");
     setAvailable(0);
     setPrice(0);
   };
@@ -25,7 +27,8 @@ const AddProduct = ({ setProductUpdated }) => {
         `https://estoque-api.henriquebarucco.com.br/products`,
         {
           name,
-          description,
+          model,
+          measure,
           available,
           price,
         }
@@ -59,13 +62,22 @@ const AddProduct = ({ setProductUpdated }) => {
                 onChange={(e) => setName(e.target.value)}
               />
             </Form.Group>
-            <Form.Group controlId="formDescription">
-              <Form.Label>Descrição</Form.Label>
+            <Form.Group controlId="formModel">
+              <Form.Label>Modelo</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Descrição do produto"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Modelo do produto"
+                value={model}
+                onChange={(e) => setModel(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="formMeasure">
+              <Form.Label>Medida</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Tamanho do produto"
+                value={measure}
+                onChange={(e) => setMeasure(e.target.value)}
               />
             </Form.Group>
             <Form.Group controlId="formAvailable">
