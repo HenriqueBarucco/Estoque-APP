@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Link from "next/link";
+
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import EditProduct from "@/components/EditProduct";
