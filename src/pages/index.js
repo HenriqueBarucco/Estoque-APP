@@ -6,6 +6,7 @@ import EditProduct from "@/components/EditProduct";
 import { useEffect, useState } from "react";
 import AddProduct from "@/components/AddProduct";
 import SaleProduct from "@/components/SaleProduct";
+import { useSession } from "next-auth/react";
 
 async function getProducts() {
   const res = await fetch(
@@ -56,6 +57,7 @@ export default function Products({ products }) {
   const [sortDirection, setSortDirection] = useState("asc");
   const [localProducts, setLocalProducts] = useState(products);
   const [productUpdated, setProductUpdated] = useState(false);
+  const { data: session } = useSession();
 
   function handleQueryChange(event) {
     setQuery(event.target.value);
@@ -113,7 +115,11 @@ export default function Products({ products }) {
             value={query}
             onChange={handleQueryChange}
           />
-          <AddProduct setProductUpdated={() => setProductUpdated(true)} />
+          {session && (
+            <>
+              <AddProduct setProductUpdated={() => setProductUpdated(true)} />
+            </>
+          )}
         </div>
         <table className="table table-striped table-hover align-middle">
           <thead>
@@ -126,9 +132,13 @@ export default function Products({ products }) {
               <th onClick={() => handleSort("price")}>Preço</th>
               <th onClick={() => handleSort("available")}>Quantidade</th>
               <th onClick={() => handleSort("total")}>Valor total</th>
-              <th>Opções</th>
-              <th></th>
-              <th></th>
+              {session && (
+                <>
+                  <th>Opções</th>
+                  <th></th>
+                  <th></th>
+                </>
+              )}
             </tr>
           </thead>
           <tbody>
@@ -150,37 +160,41 @@ export default function Products({ products }) {
                     currency: "BRL",
                   })}
                 </td>
-                <td>
-                  <button
-                    className="btn btn-danger me-2"
-                    onClick={() =>
-                      confirmRemoveProduct(
-                        product.id,
-                        setLocalProducts,
-                        localProducts
-                      )
-                    }
-                  >
-                    Excluir
-                  </button>
-                </td>
-                <td>
-                  <span className="grid me-2">
-                    <EditProduct
-                      product={product}
-                      setProductUpdated={() => setProductUpdated(true)}
-                    />
-                  </span>
-                </td>
-                <td>
-                  {" "}
-                  <span className="grid me-2">
-                    <SaleProduct
-                      product={product}
-                      setProductUpdated={() => setProductUpdated(true)}
-                    />
-                  </span>
-                </td>
+                {session && (
+                  <>
+                    <td>
+                      <button
+                        className="btn btn-danger me-2"
+                        onClick={() =>
+                          confirmRemoveProduct(
+                            product.id,
+                            setLocalProducts,
+                            localProducts
+                          )
+                        }
+                      >
+                        Excluir
+                      </button>
+                    </td>
+                    <td>
+                      <span className="grid me-2">
+                        <EditProduct
+                          product={product}
+                          setProductUpdated={() => setProductUpdated(true)}
+                        />
+                      </span>
+                    </td>
+                    <td>
+                      {" "}
+                      <span className="grid me-2">
+                        <SaleProduct
+                          product={product}
+                          setProductUpdated={() => setProductUpdated(true)}
+                        />
+                      </span>
+                    </td>
+                  </>
+                )}
               </tr>
             ))}
           </tbody>

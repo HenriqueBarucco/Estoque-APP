@@ -1,9 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Component from "./login-btn";
 import Link from "next/link";
 
 const navigation = [
@@ -17,15 +15,14 @@ function classNames(...classes) {
 
 export default function AppNavbar() {
   const pathname = usePathname();
-  const [showNav, setShowNav] = useState(false);
 
   return (
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <ul class="navbar-nav flex-row">
+    <nav className="navbar navbar-dark bg-dark">
+      <div className="container-fluid">
+        <ul className="navbar-nav flex-row">
           {navigation.map((item) => (
             <>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link
                   key={item.name}
                   href={item.href}
@@ -43,6 +40,7 @@ export default function AppNavbar() {
             </>
           ))}
         </ul>
+        <Component />
       </div>
     </nav>
   );
