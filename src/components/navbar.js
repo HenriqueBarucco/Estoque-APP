@@ -7,6 +7,7 @@ import Link from "next/link";
 const navigation = [
   { name: "Estoque", href: "/" },
   { name: "Vendas", href: "/sales" },
+  { name: "Dashboard", href: "/powerbi" },
 ];
 
 function classNames(...classes) {
