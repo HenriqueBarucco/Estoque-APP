@@ -32,7 +32,11 @@ const SaleProduct = ({ product, setProductUpdated }) => {
 
   return (
     <>
-      <Button variant="success" disabled={(product.available <= 0)} onClick={handleShow}>
+      <Button
+        variant="success"
+        disabled={product.available <= 0}
+        onClick={handleShow}
+      >
         Vender
       </Button>
 
@@ -45,7 +49,7 @@ const SaleProduct = ({ product, setProductUpdated }) => {
             <Form.Group controlId="formQuantity">
               <Form.Label>Quantidade</Form.Label>
               <Form.Control
-                type="text"
+                type="number"
                 placeholder="Quantidade para vender"
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
