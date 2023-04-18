@@ -34,7 +34,7 @@ export default function Sales({ sales }) {
   }
 
   const filteredSales = sales.filter((sale) =>
-    sale.date.toLowerCase().includes(query.toLowerCase())
+    sale.id.toString().toLowerCase().includes(query.toLowerCase())
   );
 
   // Sort products by current sort column and direction
@@ -69,21 +69,22 @@ export default function Sales({ sales }) {
         <table className="table table-striped table-hover align-middle">
           <thead>
             <tr>
-              <th onClick={() => handleSort("id")}>ID</th>
-              <th onClick={() => handleSort("name")}>Produto Vendido</th>
+              <th onClick={() => handleSort("name")}>Produto</th>
               <th onClick={() => handleSort("quantity")}>Quantidade</th>
-              <th onClick={() => handleSort("date")}>Data</th>
-              <th onClick={() => handleSort("total")}>Valor da venda</th>
+              <th onClick={() => handleSort("total")}>Lucro</th>
             </tr>
           </thead>
           <tbody>
             {sortedSales.map((sale) => (
               <tr key={sale.id}>
-                <td>{sale.id}</td>
-                <td>{sale.product.name}</td>
-                <td>{sale.quantity}</td>
-                <td>{new Date(sale.date).toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo', dateStyle: 'short', timeStyle: 'short'})}</td>
-                <td>R$ {sale.totalValue}</td>
+                <td>{sale.name}</td>
+                <td>{sale.sale.quantitySold}</td>
+                <td>
+                  {sale.sale.totalValue.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </td>
               </tr>
             ))}
           </tbody>
