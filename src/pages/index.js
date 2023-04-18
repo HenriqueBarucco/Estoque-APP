@@ -165,7 +165,6 @@ export default function Products({ products }) {
                     <td>
                       <button
                         className="btn btn-danger me-2"
-                        disabled={(!product.isSold)}
                         onClick={() =>
                           confirmRemoveProduct(
                             product.id,
