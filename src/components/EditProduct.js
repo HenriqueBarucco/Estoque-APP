@@ -9,7 +9,7 @@ const EditProduct = ({ product, setProductUpdated }) => {
   const [model, setModel] = useState(product.model);
   const [measure, setMeasure] = useState(product.measure);
   const [available, setAvailable] = useState(product.available);
-  const [price, setPrice] = useState(product.price);
+  const [price, setPrice] = useState(product.price.toFixed(2));
 
   const handleClose = () => {
     setShow(false);
@@ -17,7 +17,7 @@ const EditProduct = ({ product, setProductUpdated }) => {
     setModel(product.model);
     setMeasure(product.measure);
     setAvailable(product.setAvailable);
-    setPrice(product.price);
+    setPrice(product.price.toFixed(2));
   };
   const handleShow = () => setShow(true);
 
@@ -102,7 +102,7 @@ const EditProduct = ({ product, setProductUpdated }) => {
                 min="0"
                 step="any"
                 placeholder="Preço do produto"
-                defaultValue={product.price}
+                defaultValue={product.price.toFixed(2)}
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />

@@ -6,12 +6,12 @@ import axios from "axios";
 const SaleProduct = ({ product, setProductUpdated }) => {
   const [show, setShow] = useState(false);
   const [quantity, setQuantity] = useState(0);
-  const [price, setPrice] = useState(product.price);
+  const [price, setPrice] = useState(product.price.toFixed(2));
 
   const handleClose = () => {
     setShow(false);
     setQuantity(0);
-    setPrice(product.price);
+    setPrice(product.price.toFixed(2));
   };
   const handleShow = () => setShow(true);
 
@@ -66,7 +66,7 @@ const SaleProduct = ({ product, setProductUpdated }) => {
                 min="0"
                 step="any"
                 placeholder="Valor unitário"
-                defaultValue={product.price}
+                defaultValue={product.price.toFixed(2)}
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
