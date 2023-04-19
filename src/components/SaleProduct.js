@@ -63,6 +63,8 @@ const SaleProduct = ({ product, setProductUpdated }) => {
               <Form.Label>Preço</Form.Label>
               <Form.Control
                 type="number"
+                min="0"
+                step="any"
                 placeholder="Valor unitário"
                 defaultValue={product.price}
                 value={price}

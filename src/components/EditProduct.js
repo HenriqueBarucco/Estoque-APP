@@ -24,7 +24,7 @@ const EditProduct = ({ product, setProductUpdated }) => {
   const handleSubmit = async () => {
     try {
       if (available == null) setAvailable(0);
-      
+
       const response = await axios.put(
         `https://estoque-api.henriquebarucco.com.br/products/${product.id}`,
         {
@@ -99,6 +99,8 @@ const EditProduct = ({ product, setProductUpdated }) => {
               <Form.Label>Preço</Form.Label>
               <Form.Control
                 type="number"
+                min="0"
+                step="any"
                 placeholder="Preço do produto"
                 defaultValue={product.price}
                 value={price}

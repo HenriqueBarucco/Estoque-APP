@@ -93,6 +93,8 @@ const AddProduct = ({ setProductUpdated }) => {
               <Form.Label>Preço</Form.Label>
               <Form.Control
                 type="number"
+                min="0"
+                step="any"
                 placeholder="Preço do produto"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
