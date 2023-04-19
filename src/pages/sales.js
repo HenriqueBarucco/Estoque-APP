@@ -71,16 +71,44 @@ export default function Sales({ sales }) {
             <tr>
               <th onClick={() => handleSort("name")}>Produto</th>
               <th onClick={() => handleSort("quantity")}>Quantidade</th>
-              <th onClick={() => handleSort("total")}>Lucro</th>
+              <th onClick={() => handleSort("years")}>Anos</th>
+              <th onClick={() => handleSort("bruto")}>Valor Bruto</th>
+              <th onClick={() => handleSort("custo")}>Valor de Custo</th>
+              <th onClick={() => handleSort("profit")}>Lucro</th>
             </tr>
           </thead>
           <tbody>
             {sortedSales.map((sale) => (
               <tr key={sale.id}>
-                <td>{sale.name}</td>
+                <td>
+                  {sale.name} - {sale.measure}
+                </td>
                 <td>{sale.sale.quantitySold}</td>
+                <td class="d-flex gap-1">
+                  {" "}
+                  {sale.years.map((item) => (
+                    <>
+                      <h6>
+                        <span class="badge bg-secondary ">{item}</span>
+                      </h6>
+                    </>
+                  ))}
+                </td>
+
                 <td>
                   {sale.sale.totalValue.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </td>
+                <td>
+                  {sale.sale.totalCost.toLocaleString("pt-BR", {
+                    style: "currency",
+                    currency: "BRL",
+                  })}
+                </td>
+                <td>
+                  {sale.sale.profit.toLocaleString("pt-BR", {
                     style: "currency",
                     currency: "BRL",
                   })}

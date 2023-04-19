@@ -6,10 +6,12 @@ import axios from "axios";
 const SaleProduct = ({ product, setProductUpdated }) => {
   const [show, setShow] = useState(false);
   const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
 
   const handleClose = () => {
     setShow(false);
     setQuantity(0);
+    setPrice(0);
   };
   const handleShow = () => setShow(true);
 
@@ -19,7 +21,9 @@ const SaleProduct = ({ product, setProductUpdated }) => {
         `https://estoque-api.henriquebarucco.com.br/sales`,
         {
           productId: product.id,
-          quantity,
+          quantity: quantity,
+          price: price,
+          year: "2023",
         }
       );
       console.log(response.data);
@@ -53,6 +57,15 @@ const SaleProduct = ({ product, setProductUpdated }) => {
                 placeholder="Quantidade para vender"
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group controlId="formPrice">
+              <Form.Label>Preço</Form.Label>
+              <Form.Control
+                type="number"
+                placeholder="Valor unitário"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
               />
             </Form.Group>
           </Form>
