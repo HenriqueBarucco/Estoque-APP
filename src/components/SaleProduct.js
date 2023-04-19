@@ -6,12 +6,12 @@ import axios from "axios";
 const SaleProduct = ({ product, setProductUpdated }) => {
   const [show, setShow] = useState(false);
   const [quantity, setQuantity] = useState(0);
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState(product.price);
 
   const handleClose = () => {
     setShow(false);
     setQuantity(0);
-    setPrice(0);
+    setPrice(product.price);
   };
   const handleShow = () => setShow(true);
 
