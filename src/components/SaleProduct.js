@@ -64,6 +64,7 @@ const SaleProduct = ({ product, setProductUpdated }) => {
               <Form.Control
                 type="number"
                 placeholder="Valor unitário"
+                defaultValue={product.price}
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
