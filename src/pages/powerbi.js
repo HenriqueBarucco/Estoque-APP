@@ -20,7 +20,7 @@ export default function PowerBI() {
         style={styles.iframe}
         title="PetShop"
         key="if"
-        src="https://app.powerbi.com/view?r=eyJrIjoiMDk2Zjc3ZDUtZWM3OC00N2M5LTlkY2QtNDQ3YjBmM2IxNGI4IiwidCI6IjNiMThmODUyLTJkZjgtNDE0Ni05ZGU0LWIxYjYyZmRlNDliMyJ9&$toolbarType=0"
+        src="https://app.powerbi.com/reportEmbed?reportId=a5671dad-a499-4e16-ac05-411d82a0911c&autoAuth=true&ctid=da49a844-e2e3-40af-86a6-c3819d704f49"
         frameborder="0"
       ></iframe>
     </div>
