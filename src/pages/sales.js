@@ -56,7 +56,9 @@ export default function Sales({ sales }) {
         <title>Lista de Vendas</title>
       </Head>
       <div className="container">
-        <h1 className="text-center mb-4">Vendas</h1>
+        <h1 className="text-center mb-4" style={{ color: "#184895" }}>
+          Vendas
+        </h1>
         <div className="mb-4 d-flex justify-content-between">
           {/* <input
             type="text"

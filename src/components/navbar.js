@@ -18,7 +18,7 @@ export default function AppNavbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="navbar navbar-dark bg-dark">
+    <nav className="navbar navbar-dark" style={{ backgroundColor: "#fccd13" }}>
       <div className="container-fluid">
         <ul className="navbar-nav flex-row">
           {navigation.map((item) => (
@@ -33,6 +33,11 @@ export default function AppNavbar() {
                       : "nav-link mx-2",
                     "text-center"
                   )}
+                  style={{
+                    color: classNames(
+                      pathname === item.href ? "#000" : "#184895cc"
+                    ),
+                  }}
                   aria-current={pathname === item.href ? "page" : undefined}
                 >
                   {item.name}

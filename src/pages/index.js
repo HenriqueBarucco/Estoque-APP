@@ -106,7 +106,9 @@ export default function Products({ products }) {
         <title>Lista de Produtos</title>
       </Head>
       <div className="container">
-        <h1 className="text-center mb-4">Estoque</h1>
+        <h1 className="text-center mb-4" style={{ color: "#184895" }}>
+          Estoque
+        </h1>
         <div className="mb-4 d-flex justify-content-between">
           <input
             type="text"
@@ -164,7 +166,7 @@ export default function Products({ products }) {
                   <>
                     <td>
                       <button
-                        className="btn btn-danger me-2"
+                        className="btn btn-outline-danger me-2"
                         onClick={() =>
                           confirmRemoveProduct(
                             product.id,

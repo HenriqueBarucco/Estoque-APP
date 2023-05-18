@@ -37,7 +37,7 @@ const SaleProduct = ({ product, setProductUpdated }) => {
   return (
     <>
       <Button
-        variant="success"
+        variant="outline-success"
         disabled={product.available <= 0}
         onClick={handleShow}
       >

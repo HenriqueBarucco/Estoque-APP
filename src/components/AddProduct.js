@@ -43,7 +43,7 @@ const AddProduct = ({ setProductUpdated }) => {
 
   return (
     <>
-      <Button variant="success" onClick={handleShow}>
+      <Button variant="outline-success" onClick={handleShow}>
         Adicionar
       </Button>
 
