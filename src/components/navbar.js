@@ -19,7 +19,7 @@ export default function AppNavbar() {
 
   return (
     <nav className="navbar navbar-dark" style={{ backgroundColor: "#fccd13" }}>
-      <div className="container-fluid">
+      <div className="container-table-responsive">
         <ul className="navbar-nav flex-row">
           {navigation.map((item) => (
             <>
