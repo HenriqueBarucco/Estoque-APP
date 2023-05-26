@@ -105,7 +105,7 @@ export default function Products({ products }) {
       <Head>
         <title>Lista de Produtos</title>
       </Head>
-      <div className="container">
+      <div className="container table-responsive">
         <h1 className="text-center mb-4" style={{ color: "#184895" }}>
           Estoque
         </h1>

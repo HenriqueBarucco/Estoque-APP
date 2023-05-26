@@ -55,7 +55,7 @@ export default function Sales({ sales }) {
       <Head>
         <title>Lista de Vendas</title>
       </Head>
-      <div className="container">
+      <div className="container table-responsive">
         <h1 className="text-center mb-4" style={{ color: "#184895" }}>
           Vendas
         </h1>
